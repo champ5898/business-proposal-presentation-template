@@ -162,7 +162,7 @@ export function WhyChooseUs() {
         <div className="mt-8 grid md:grid-cols-3 gap-6">
           <div className="bg-blue-50 rounded-xl p-6 text-center">
             <CheckCircle className="w-10 h-10 text-blue-600 mx-auto mb-3" />
-            <div className="text-3xl font-bold text-blue-600 mb-1">20+</div>
+            <div className="text-3xl font-bold text-blue-600 mb-1">100+</div>
             <div className="text-sm text-gray-700 font-open-sans">Projects Delivered</div>
           </div>
           
