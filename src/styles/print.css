@@ -1,0 +1,118 @@
+@media print {
+  /* Hide all navigation elements */
+  button,
+  nav,
+  .print-hide,
+  footer button {
+    display: none !important;
+  }
+
+  /* Page setup for slides */
+  @page {
+    size: A4 landscape;
+    margin: 0.5cm;
+  }
+
+  /* Reset body for printing */
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Each slide component should be a page */
+  body > div,
+  [data-slide],
+  .print-slide {
+    page-break-after: always;
+    page-break-inside: avoid;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: block;
+  }
+
+  /* Make sure children also break after each slide */
+  .print-slide > div:first-child {
+    min-height: 100vh;
+  }
+
+  /* Ensure last slide doesn't create extra page */
+  body > div:last-child,
+  [data-slide]:last-child,
+  .print-slide:last-child {
+    page-break-after: auto;
+  }
+
+  /* Force all colors and backgrounds to print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Ensure gradients and backgrounds are visible */
+  .bg-gradient-to-br,
+  .bg-gradient-to-r,
+  .bg-gradient-to-l,
+  .bg-gradient-to-t,
+  .bg-gradient-to-b,
+  [class*="bg-gradient"],
+  [class*="bg-blue"],
+  [class*="bg-green"],
+  [class*="bg-purple"],
+  [class*="bg-orange"],
+  [class*="bg-red"],
+  [class*="bg-white"],
+  [class*="bg-gray"] {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Keep shadows for depth */
+  .shadow,
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl {
+    box-shadow: inherit !important;
+  }
+
+  /* Footer should stay at bottom */
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure charts and SVGs print properly */
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent text from being cut off */
+  h1, h2, h3, h4, h5, h6, p {
+    page-break-inside: avoid;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Tables shouldn't break */
+  table {
+    page-break-inside: avoid;
+  }
+
+  /* Fixed elements need to be absolute for print */
+  .fixed {
+    position: absolute;
+  }
+
+  /* Ensure watermark is visible but subtle */
+  .opacity-5 {
+    opacity: 0.05 !important;
+  }
+}
