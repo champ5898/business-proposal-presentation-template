@@ -67,7 +67,7 @@ export function WhyChooseUs() {
             Why Choose DAS LABS?
           </h1>
           <p className="text-xl text-gray-600 font-open-sans">
-            Freelance software developer from Kanpur specializing in AI-powered e-commerce solutions
+            Freelance software developer specializing in AI-powered e-commerce solutions
           </p>
         </div>
 
